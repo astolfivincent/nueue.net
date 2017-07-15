@@ -1,4 +1,4 @@
 <?php
-$data = 'hey';
-return $_POST[$data];
+$data = $_GET['data'];
+return $data;
 ?>
