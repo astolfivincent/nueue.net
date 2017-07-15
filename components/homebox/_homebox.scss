@@ -1,0 +1,84 @@
+// Homebox
+//
+// Markup: homebox.twig
+//
+// Style guide: homebox
+
+.homebox__wrapper,
+%homebox__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: $white;
+}
+
+.homebox__logo,
+%homebox__logo {
+  width: 15.9rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.homebox,
+%homebox {
+  background: rgba(29, 29, 29, .75);
+  padding: 3.5rem 4rem;
+  margin: 0 auto;
+  border-radius: 2px;
+  width: 18rem;
+}
+
+.homebox__content,
+%homebox__content {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: opacity .2s ease, max-height .2s ease, margin .2s ease;
+
+  .homebox:hover & {
+    opacity: 1;
+    max-height: 400px;
+    margin: 2.5rem 0 0;
+  }
+}
+
+
+.homebox__buttons,
+%homebox__buttons {
+  margin: 0 auto;
+}
+
+.homebox__button-link,
+%homebox__button-link {
+  display: block;
+  width: 99%;
+  border: 1px solid $white;
+  padding: .75rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .75rem;
+
+  &:nth-of-type(1) {
+    margin-right: .5rem;
+  }
+}
+
+.homebox__button-icon,
+%homebox__button-icon {
+  height: 16px;
+  display: inline;
+  margin: 0 3px -3px;
+}
+
+.homebox__form,
+%homebox__form {
+  margin: 2.5rem 0 0;
+}
+
+.homebox__form-title,
+%homebox__form-title {
+  margin: 2.5rem 0 0;
+  font-size: 1rem;
+}

@@ -11,6 +11,7 @@ var gulp             = require('gulp'),
     gulp             = require('gulp'),
     sassLint         = require('gulp-sass-lint'),
     eslint           = require('gulp-eslint'),
+    browserify       = require('gulp-browserify-globs'),
     browserSync      = require('browser-sync'),
     minifyCSS        = require('gulp-minify-css'),
     sassGlob         = require('gulp-sass-glob');
@@ -31,7 +32,7 @@ gulp.task('styleguide', $.shell.task([
 ));
 
 // Static server
-gulp.task('watch', ['styles', 'lint', 'styleguide'], function() {
+gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
     browserSync.init({
         server: {
             baseDir: ".",
@@ -44,7 +45,7 @@ gulp.task('watch', ['styles', 'lint', 'styleguide'], function() {
 
     gulp.watch(['components/**/*.{twig}', 'scss/**/*.{twig}'], ['styleguide', browserSync.reload]);
 
-    gulp.watch(['components/**/*.js'], ['eslint', 'browserify', browserSync.reload]);
+    gulp.watch(['components/**/*.js'], ['browserify', browserSync.reload]);
 
 });
 
@@ -55,6 +56,14 @@ gulp.task('styles', function() {
         .pipe(postcss([ autoprefixer({ browsers: ['last 4 versions'] }) ]))
         .pipe(minifyCSS())
         .pipe(gulp.dest('css')).pipe(browserSync.stream());
+});
+
+gulp.task('browserify', function () {
+    return browserify(['components/**/*.js'], {
+        debug: false,
+        uglify: true
+    })
+        .pipe(gulp.dest('js'));
 });
 
 gulp.task('default', function(){

@@ -7,7 +7,8 @@
   <meta name="description" content="Web Development">
   <meta name="author" content="Nueue">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="js/bundle.js" />
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -15,10 +16,28 @@
 </head>
 
 <body>
-  <div class="layout-max">
-    <div class="content">
-      <img class="logo" src="images/logo.png" />
+  <div class="homebox__wrapper">
+    <div class="homebox">
+      <img class="homebox__logo" src="images/logo.svg" />
+
+      <div class="homebox__content">
+        <a href="http://github.com/astolfivincent" aria-label="Github" class="homebox__button-link">
+          <img class="homebox__button-icon" src="images/github.svg" />
+          <span class="homebox__button-text">Check me Out</span>
+        </a>
+
+        <form class="homebox__form homebox__form-hidden">
+          <h2 class="homebox__form-title">Get in Touch</h2>
+          <input name="name" type="text" placeholder="Name" />
+          <input name="email" type="email" placeholder="Email" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <input name="submit" type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
+  </div>
+  <div class="content__background">
+    <img src="https://unsplash.it/960/480/?random" />
   </div>
 </body>
 </html>
