@@ -36,7 +36,7 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
     browserSync.init({
         server: {
             baseDir: ".",
-            https: true
+            https: false
         },
         startPath: "/styleguide"
     });
