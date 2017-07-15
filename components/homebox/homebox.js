@@ -8,8 +8,7 @@ $(document).ready(function() {
       type: "POST",
       url: url,
       data: $(this).serialize(),
-      success: function(data)
-      {
+      success: function(data) {
          alert(data);
       }
     });
