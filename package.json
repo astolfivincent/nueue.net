@@ -1,0 +1,64 @@
+{
+  "name": "nueue.net",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astolfivincent/nueue.net"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astolfivincent/nueue.net"
+  },
+  "homepage": "https://github.com/astolfivincent/nueue.net",
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "bowser": "^1.4.5",
+    "breakpoint-sass": "^2.6.1",
+    "browser-sync": "^2.2.2",
+    "browserify": "^13.0.0",
+    "browsernizr": "^2.1.0",
+    "caniuse-db": "^1.0.30000405",
+    "datatables.net": "^1.10.12",
+    "del": "^0.1.3",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify-globs": "^0.1.2",
+    "gulp-concat": "^2.5.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-file-include": "^0.13.7",
+    "gulp-flatten": "0.2.0",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "^0.6.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sass": "^2.1.1",
+    "gulp-sass-glob": "^1.0.5",
+    "gulp-sass-lint": "^1.1.1",
+    "gulp-shell": "^0.2.9",
+    "gulp-size": "^1.1.0",
+    "imagesloaded": "^4.1.0",
+    "jquery": "^2.2.0",
+    "kss": "^3.0.0-beta.18",
+    "macy": "^1.1.1",
+    "modernizr": "^3.3.1",
+    "node-sass": "^3.4.2",
+    "postcss": "^5.0.14",
+    "run-sequence": "^0.3.6",
+    "twig": "^1.10.5"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
+  }
+}
