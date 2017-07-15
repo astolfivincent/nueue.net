@@ -1,4 +1,6 @@
 <?php
-$data = $_GET['data'];
-return $data;
+$name = $_GET['name'];
+$email = $_GET['email'];
+$message = $_GET['message'];
+return $name;
 ?>
