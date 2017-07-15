@@ -8,8 +8,7 @@
 %content__background {
   width: 100%;
   height: 100%;
-  background-color: $white;
-  filter: blur(4px);
+  background-color: #4c6968;
   z-index: -1;
   position: absolute;
   top: 0;
@@ -19,5 +18,6 @@
     min-width: 105%;
     min-height: 105%;
     margin: -2%;
+    filter: blur(4px);
   }
 }
