@@ -66,15 +66,13 @@ $font-size: .75rem;
 
 .homebox__form-message-show,
 %homebox__form-message-show {
-  display: block;
+  display: block !important;
 }
 
 .homebox__form-message,
 %homebox__form-message {
   display: none;
   margin-top: 2.5rem;
-  border: 1px solid;
-  padding: $font-size;
   text-align: center;
   text-transform: uppercase;
   font-size: $font-size;

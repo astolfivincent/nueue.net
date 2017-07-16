@@ -20,7 +20,7 @@ var gulp             = require('gulp'),
 gulp.task('styleguide', $.shell.task([
         // kss-node [source   folder of files to parse] [destination folder] --template [location of template files]
         'node_modules/.bin/kss <%= source %> <%= destination %> --builder <%= builder %> --namespace <%= namespace %> ' +
-        '--css ../css/styles.css '
+        '--css css/styles.css '
     ], {
         templateData: {
             source:       'components',
