@@ -11,6 +11,4 @@ if ($name && $email && $message) {
 }
 
 echo $name;
-echo $email;
-echo $message;
 ?>
