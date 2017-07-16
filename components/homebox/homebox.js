@@ -6,9 +6,6 @@ $(document).ready(function() {
     var name = $(".homebox__form input[name=name]").val();
     var email = $(".homebox__form input[name=email]").val();
     var message = $(".homebox__form textarea[name=message]").val();
-    console.log(name);
-    console.log(email);
-    console.log(message);
     var url = "/form-submissions.php";
     $.ajax({
       type: "POST",
