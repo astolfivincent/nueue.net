@@ -6,7 +6,7 @@ $to = 'astolfivincent@gmail.com';
 $subject = 'Contact Form Submission from '.$name;
 $headers = 'From: vincent@nueue.net' . "\r\n" . 'Reply-To: '. $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
-if ($name && $email && $message) {
+if (isset($name) && isset($email) && isset($message)) {
   mail($to, $subject, $message, $headers);
   echo 'Submission Accepted';
 }
