@@ -1,5 +1,7 @@
 <?php
 $name = htmlspecialchars_decode($_POST['name']);
+$email = htmlspecialchars_decode($_POST['email']);
+$message = htmlspecialchars_decode($_POST['message']);
 /*
 $email = htmlspecialchars_decode($_GET['email']);
 $message = htmlspecialchars_decode($_GET['message']);
@@ -12,5 +14,5 @@ if ($name && $email && $message) {
 }
 */
 
-echo $name;
+echo $email;
 ?>
