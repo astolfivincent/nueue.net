@@ -17,7 +17,7 @@ $(document).ready(function() {
       },
       success: function(data) {
          if (data == 'Submission Accepted') {
-           $(this).hide();
+           $(".homebox__form").hide();
            $('.homebox__form-message').toggleClass('homebox__form-message-show');
          }
       }

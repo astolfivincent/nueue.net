@@ -4,6 +4,8 @@
 //
 // Style guide: homebox
 
+$font-size: .75rem;
+
 .homebox__wrapper,
 %homebox__wrapper {
   width: 100%;
@@ -45,10 +47,10 @@
   display: block;
   width: 99%;
   border: 1px solid $white;
-  padding: .75rem 0;
+  padding: $font-size 0;
   text-align: center;
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: $font-size;
 
   &:nth-of-type(1) {
     margin-right: .5rem;
@@ -72,10 +74,10 @@
   display: none;
   margin-top: 2.5rem;
   border: 1px solid;
-  padding: .75rem;
+  padding: $font-size;
   text-align: center;
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: $font-size;
 }
 
 .homebox__form,
