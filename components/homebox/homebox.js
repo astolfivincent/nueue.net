@@ -8,7 +8,8 @@ $(document).ready(function() {
     $.ajax({
       type: "POST",
       url: url,
-      data: $(this).serialize(),
+      dataType: 'JSON',
+      data: {name: 'names'},
       success: function(data) {
          alert(data);
       }
