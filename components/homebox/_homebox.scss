@@ -78,6 +78,12 @@ $font-size: .75rem;
   font-size: $font-size;
 }
 
+.homebox__form-link,
+%homebox__form-link {
+  margin-top: $font-size;
+  display: inline-block;
+}
+
 .homebox__form,
 %homebox__form {
   margin: 2.5rem 0 0;
