@@ -17,7 +17,7 @@ $font-size: .75rem;
 
 .homebox,
 %homebox {
-  background: rgba(20, 20, 20, .75);
+  background: rgba(20, 20, 20, .9);
   padding: 3.5rem;
   margin: 0 auto;
   border-radius: 2px;
@@ -86,7 +86,7 @@ $font-size: .75rem;
 
 .homebox__form,
 %homebox__form {
-  margin: 2.5rem 0 0;
+  @extend %homebox__content;
 }
 
 .homebox__form-title,
