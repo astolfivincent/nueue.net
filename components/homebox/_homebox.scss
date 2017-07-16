@@ -62,6 +62,22 @@
   margin: 0 3px -3px;
 }
 
+.homebox__form-message-show,
+%homebox__form-message-show {
+  display: block;
+}
+
+.homebox__form-message,
+%homebox__form-message {
+  display: none;
+  margin-top: 2.5rem;
+  border: 1px solid;
+  padding: .75rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .75rem;
+}
+
 .homebox__form,
 %homebox__form {
   margin: 2.5rem 0 0;
