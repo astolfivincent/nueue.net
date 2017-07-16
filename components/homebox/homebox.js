@@ -3,6 +3,7 @@ $ = require('jQuery');
 $(document).ready(function() {
   $(".homebox__form").submit(function( event ) {
     event.preventDefault();
+    console.log('working');
     var name = $(".homebox__form input[name=name]").val();
     var email = $(".homebox__form input[name=email]").val();
     var message = $(".homebox__form textarea[name=message]").val();
