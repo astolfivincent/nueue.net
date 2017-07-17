@@ -51,10 +51,6 @@ $font-size: .75rem;
   text-align: center;
   text-transform: uppercase;
   font-size: $font-size;
-
-  &:nth-of-type(1) {
-    margin-right: .5rem;
-  }
 }
 
 .homebox__button-icon,
@@ -93,4 +89,9 @@ $font-size: .75rem;
 %homebox__form-title {
   margin: 2.5rem 0 0;
   font-size: 1rem;
+}
+
+.homebox__form-error,
+%homebox__form-error {
+  @extend %homebox__form-message;
 }
