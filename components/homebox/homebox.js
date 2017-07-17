@@ -13,7 +13,7 @@ $(document).ready(function() {
     var email = $(".homebox__form input[name=email]").val();
     var message = $(".homebox__form textarea[name=message]").val();
     var url = "/form-submissions.php";
-    if (validateEmail(email) && mail && name) {
+    if (validateEmail(email) && message && name) {
       $.ajax({
         type: "POST",
         url: url,
