@@ -6,8 +6,10 @@ $to = 'astolfivincent@gmail.com';
 $subject = 'Contact Form Submission from '.$name;
 $headers = 'From: Nueue Contact <vincent@nueue.net>' . "\r\n" . 'Reply-To: '. $name .'<'. $email . "> \r\n" . 'X-Mailer: PHP/' . phpversion();
 
-if (isset($name) && isset($email) && isset($message)) {
+if (isset($name) && filter_var($email, FILTER_VALIDATE_EMAIL) && isset($email) && isset($message)) {
   mail($to, $subject, $message, $headers);
   echo 'Submission Accepted';
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  echo 'Invalid Email';
 }
 ?>

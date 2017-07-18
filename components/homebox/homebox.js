@@ -9,14 +9,17 @@ $(document).ready(function() {
   $(".homebox__form").submit(function( event ) {
     event.preventDefault();
     var $homeboxError = $('.homebox__form-error');
+    var nameError = '<p>What\'s your name!?</p>'; // Name Error text
+    var emailError = '<p>Please enter a valid email address</p>'; // Email Error text
+    var messageError = '<p>Please enter a message</p>'; // Message Error text
     var name = $(".homebox__form input[name=name]").val();
     var email = $(".homebox__form input[name=email]").val();
     var message = $(".homebox__form textarea[name=message]").val();
-    var url = "/form-submissions.php";
+
     if (validateEmail(email) && message && name) {
       $.ajax({
         type: "POST",
-        url: url,
+        url: '/form-submissions.php',
         data: {
           name: name,
           email: email,
@@ -26,18 +29,20 @@ $(document).ready(function() {
            if (data == 'Submission Accepted') {
              $(".homebox__form").hide();
              $('.homebox__form-message').toggleClass('homebox__form-message-show');
+           } else if (data == 'Invalid Email') {
+             $homeboxError.show().append(emailError);
            }
         }
       });
     } else {
       if (!name) {
-        $homeboxError.show().append('<p>What\'s your name!?</p>');
+        $homeboxError.show().append(nameError);
       }
       if (!validateEmail(email)) {
-        $homeboxError.show().append('<p>Please enter a valid email address</p>');
+        $homeboxError.show().append(emailError);
       }
       if (!message) {
-        $homeboxError.show().append('<p>Please enter a message</p>');
+        $homeboxError.show().append(messageError);
       }
     }
   });
