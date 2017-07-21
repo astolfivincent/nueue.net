@@ -35,6 +35,7 @@ $(document).ready(function() {
         }
       });
     } else {
+      $homeboxError.empty();
       if (!name) {
         $homeboxError.show().append(nameError);
       }
