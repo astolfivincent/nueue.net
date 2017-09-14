@@ -60,3 +60,4 @@ typings/
 
 # Other
 .DS_Store
+components/background/background.json
