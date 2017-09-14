@@ -1,6 +1,6 @@
 $ = require('jQuery');
 $(document).ready(function() {
-  $.getJSON( "/components/background/background.json", function( data ) {
+  $.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
     $('#background-image').attr('src', data[0]);
   });
   $.ajax({
