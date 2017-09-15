@@ -12,6 +12,7 @@
   position: absolute;
   top: 0;
   overflow: hidden;
+  background: #3e3e3e;
 }
 
 %background__image,
@@ -21,13 +22,11 @@
   min-height: 105%;
   margin: -2%;
   opacity: 0;
-  transition: opacity 2s, filter 2s;
-  background-size: 400% 400%;
-  background: url('../images/sakura.jpg');
+  transition: opacity 1s, filter 1s;
 }
 
 %background__image-unhide,
 .background__image-unhide {
   opacity: 1;
-  filter: blur(8px);
+  filter: blur(6px);
 }

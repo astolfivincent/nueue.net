@@ -1,15 +1,11 @@
 $ = require('jQuery');
 $(document).ready(function() {
-  function backgroundJSON(callback) {
-    $.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
-      $background = $('.background__image');
-      $background.attr('src', data[0]);
-      callback();
+  $.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
+    $background = $('.background__image');
+    $background.load(function() {
+      $(this).addClass('background__image-unhide');
     });
-  }
-
-  backgroundJSON(function() {
-    $('.background__image').addClass('background__image-unhide');
+    $background.attr('src', data[0]);
   });
 
   $.ajax({
