@@ -1,7 +1,11 @@
 $ = require('jQuery');
 $(document).ready(function() {
   $.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
-    $('#background-image').attr('src', data[0]);
+    $bck = $('#background-image');
+    $bck.attr('src', data[0]);
+    $bck.on('load', function () {
+      alert($('img.product_image').attr('src'));
+    });
   });
   $.ajax({
     type: "POST",
