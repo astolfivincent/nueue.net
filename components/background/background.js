@@ -10,7 +10,6 @@ $(document).ready(function() {
       requesting: 1
     },
     success: function(data) {
-      // $('#background-image').attr('src', data);
       console.log(data);
     }
   });

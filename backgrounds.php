@@ -14,8 +14,11 @@
   fclose($file);
 
   function gank_image($g,$a,$n,$k) {
-    copy($n, $k.'image-'.rand($g, $a).'.jpg');
+    $r = rand($g, $a);
+    copy($n, $k.'image-'.$r.'.jpg');
+    return $k.'image-'.$r.'.jpg';
   }
 
-  gank_image(0, 999999999,'https://unsplash.it/960/480/?random', 'images/downloaded/');
+  gank_image(0, 999999999,'https://images.weserv.nl/?il&url=unsplash.it/960/480/?random', 'images/downloaded/');
+
 ?>
