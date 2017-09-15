@@ -1,11 +1,11 @@
 $ = require('jQuery');
 $(document).ready(function() {
   function backgroundJSON(callback) {
-    //$.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
+    $.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
       $background = $('.background__image');
-      $background.attr('src', 'images/backgrounds/image-299191331.jpg');
+      $background.attr('src', data[0]);
       callback();
-    //});
+    });
   }
 
   backgroundJSON(function() {
