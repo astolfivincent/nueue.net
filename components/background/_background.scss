@@ -22,5 +22,11 @@
   min-height: 105%;
   margin: -2%;
   opacity: 0;
+  transition: opacity 2s;
   filter: blur(8px);
+}
+
+.background__image-unhide,
+%background__image-unhide {
+  opacity: 1;
 }
