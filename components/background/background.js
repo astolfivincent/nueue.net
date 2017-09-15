@@ -3,8 +3,10 @@ $(document).ready(function() {
   $.getJSON( "http://nueue.net/components/background/background.json", function( data ) {
     $bck = $('#background-image');
     $bck.attr('src', data[0]);
-    $bck.on('load', function () {
-      alert($('img.product_image').attr('src'));
+    $bck.on('data-attribute-changed', function () {
+      $(this).on('load', function() {
+        console.log($(this).attr('src'));
+      });
     });
   });
   $.ajax({
