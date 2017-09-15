@@ -7,7 +7,7 @@
     return $files[$file];
   }
 
-  $myObj = Array(random_image('images/downloaded'));
+  $myObj = Array(random_image('images/backgrounds'));
   $myJSON = json_encode($myObj);
   $file = fopen('components/background/background.json','w+');
   fwrite($file, $myJSON);
@@ -19,6 +19,6 @@
     return $k.'image-'.$r.'.jpg';
   }
 
-  gank_image(0, 999999999,'https://images.weserv.nl/?il&url=unsplash.it/960/480/?random', 'images/downloaded/');
+  gank_image(0, 999999999,'https://images.weserv.nl/?il&url=unsplash.it/960/480/?random', 'images/backgrounds/');
 
 ?>
