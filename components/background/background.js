@@ -4,7 +4,7 @@ $(document).ready(function() {
     return parseInt(Math.random() * (max - min)) + min;
   }
   rand = Math.floor(getRandomArbitrary(1,100));
-  src = 'images/downloads/image-' + rand + '.jpg';
+  src = 'images/backgrounds/image-' + rand + '.jpg';
   $background = $('.background__image');
   $background.load(function() {
     $(this).addClass('background__image-unhide');

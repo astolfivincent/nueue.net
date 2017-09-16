@@ -1,38 +1,37 @@
 <?php
   header('Access-Control-Allow-Origin: *');
-  $images = glob('images/backgrounds' . '/*.*');
-  $rand_opts = array(
-    'rand_min' => 0,
-    'rand_max' => 999999999,
-  );
-  $gank_opts = array(
-    'url' => 'https://images.weserv.nl/?il&url=unsplash.it/960/480/?random&'.rand($rand_opts['rand_min'], $rand_opts['rand_max']),
-    'backgrounds' => $images
-  );
 
-  function random_image($files) {
-    $file = array_rand($files);
-    return $files[$file];
-  }
-
-  function set_next_background($url) {
-    $url = Array($url);
-    $json = json_encode($url);
-    $file = fopen('components/background/background.json','w+');
-    fwrite($file, $json);
-    fclose($file);
+  function remote_file_size($url){
+  	$data = get_headers($url, true);
+  	if (isset($data['Content-Length']))
+  	return (int) $data['Content-Length'];
   }
 
   function gank_image($g,$a,$n,$k) {
+    $m = 100;
     $c = count($k);
-    if ($c < 100) {
-      $u = 'images/backgrounds/image-'.$c + 1.'.jpg';
-      copy($n, $u);
-      return $u;
+    if (isset($a)){
+      if($g >= $a) {
+        $n = $n.rand(1, 99999999);
+        if ($c < $m) {
+          $v = $c + 1;
+          $u = 'images/backgrounds/image-'. $v .'.jpg';
+          copy($n, $u);
+        } else {
+          echo 'Reached maximum number of images: '.$m;
+        }
+      } else {
+        return gank_image($g,$a,$n,$k);
+      }
     }
   }
 
-  set_next_background(random_image($gank_opts['backgrounds']));
-  gank_image($rand_opts['rand_min'], $rand_opts['rand_max'], $gank_opts['url'], $gank_opts['backgrounds']);
+  $gank_opts = array(
+    'filesize_max' => 70000, // Max filesize for image in bytes
+    'url' => 'https://images.weserv.nl/?il&url=unsplash.it/960/480/?random&',
+    'backgrounds' => glob('images/backgrounds' . '/*.*')
+  );
+
+  gank_image($gank_opts['filesize_max'], remote_file_size($gank_opts['url']), $gank_opts['url'], $gank_opts['backgrounds']);
 
 ?>
