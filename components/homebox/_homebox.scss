@@ -4,7 +4,8 @@
 //
 // Style guide: homebox
 
-$font-size: .75rem;
+$homebox__font-size: .75rem;
+$homebox__background: rgba(20, 20, 20, .9);
 
 .homebox__wrapper,
 %homebox__wrapper {
@@ -19,7 +20,7 @@ $font-size: .75rem;
 
 .homebox,
 %homebox {
-  background: rgba(20, 20, 20, .9);
+  background: $homebox__background;
   display: flex;
   align-items: center;
   width: 100%;
@@ -66,10 +67,10 @@ $font-size: .75rem;
   display: block;
   width: 99%;
   border: 1px solid $white;
-  padding: $font-size 0;
+  padding: $homebox__font-size 0;
   text-align: center;
   text-transform: uppercase;
-  font-size: $font-size;
+  font-size: $homebox__font-size;
 }
 
 .homebox__button-icon,
@@ -90,12 +91,12 @@ $font-size: .75rem;
   margin-top: 2.5rem;
   text-align: center;
   text-transform: uppercase;
-  font-size: $font-size;
+  font-size: $homebox__font-size;
 }
 
 .homebox__form-link,
 %homebox__form-link {
-  margin-top: $font-size;
+  margin-top: $homebox__font-size;
   display: inline-block;
 }
 

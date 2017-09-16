@@ -4,6 +4,8 @@
 //
 // Style guide: background
 
+@import '../components/homebox/homebox';
+
 %background,
 .background {
   width: 100%;
@@ -24,6 +26,22 @@
   opacity: 0;
   filter: blur(9px);
   transition: opacity 1s, filter 1s;
+}
+
+.background__curator,
+%background__curator {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: .5rem .75rem;
+  background: $homebox__background;
+  border-radius: 2px;
+  color: $white;
+  max-width: 7rem;
+  text-align: center;
+  font-size: .75rem;
+  line-height: 1rem;
+  cursor: pointer;
 }
 
 %background__image-unhide,
