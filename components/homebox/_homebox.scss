@@ -9,8 +9,8 @@ $homebox__background: rgba(20, 20, 20, .9);
 
 .homebox__wrapper,
 %homebox__wrapper {
-  height: 100%;
   color: $white;
+  height: 100%;
 
   @include breakpoint(450px) {
     display: flex;
@@ -27,12 +27,17 @@ $homebox__background: rgba(20, 20, 20, .9);
   height: 100%;
 
   @include breakpoint(450px) {
-    height: initial;
-    margin: 0 auto;
+    margin: auto;
     padding: 3.5rem;
     border-radius: 2px;
     width: 18rem;
     display: block;
+    max-height: fit-content;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 

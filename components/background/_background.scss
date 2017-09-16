@@ -26,6 +26,8 @@
   opacity: 0;
   filter: blur(9px);
   transition: opacity 1s, filter 1s;
+  width: auto;
+  height: auto;
 }
 
 .background__curator,
