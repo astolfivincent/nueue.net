@@ -24,9 +24,9 @@
   }
 
   function gank_image($g,$a,$n,$k) {
-    if (count($k) < 100) {
-      $r = rand($g, $a);
-      $u = 'images/backgrounds/image-'.$r.'.jpg';
+    $c = count($k);
+    if ($c < 100) {
+      $u = 'images/backgrounds/image-'.$c + 1.'.jpg';
       copy($n, $u);
       return $u;
     }
