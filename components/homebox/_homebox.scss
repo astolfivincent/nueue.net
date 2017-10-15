@@ -20,12 +20,19 @@ $homebox__background: rgba(20, 20, 20, .9);
   }
 }
 
+
+.homebox__form,
+%homebox__form {
+  margin: 2.5rem 0 0;
+}
+
 .homebox,
 %homebox {
   background: $homebox__background;
   align-self: center;
   width: 100%;
   height: 100%;
+  overflow: scroll;
 
   @include breakpoint(450px) {
     margin: auto;
@@ -34,6 +41,7 @@ $homebox__background: rgba(20, 20, 20, .9);
     width: 18rem;
     display: block;
     height: auto;
+    overflow: hidden;
   }
 }
 
@@ -102,11 +110,6 @@ $homebox__background: rgba(20, 20, 20, .9);
   display: inline-block;
 }
 
-.homebox__form,
-%homebox__form {
-  margin: 2.5rem 0 0;
-}
-
 .homebox__form-title,
 %homebox__form-title {
   margin: 2.5rem 0 0;
@@ -116,4 +119,34 @@ $homebox__background: rgba(20, 20, 20, .9);
 .homebox__form-error,
 %homebox__form-error {
   @extend %homebox__form-message;
+}
+
+.homebox__form-loader-icon,
+%homebox__form-loader-icon {
+  display: inline-block;
+  height: 1.2rem;
+  margin: 0 auto;
+  animation-name: loading-placeholder-spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes loading-placeholder-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.homebox__form-loader,
+%homebox__form-loader {
+  @extend %input;
+  display: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: $homebox__font-size;
 }

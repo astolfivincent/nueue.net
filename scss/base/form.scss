@@ -5,7 +5,8 @@ form {
 input[type="text"],
 input[type="email"],
 input[type="submit"],
-textarea {
+textarea,
+%input {
   font-size: .75rem;
   background: transparent;
   border: 1px solid $white;
