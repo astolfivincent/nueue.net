@@ -69,10 +69,10 @@ $(document).ready(function() {
         homeboxError(nameError, false);
       }
       if (!validateEmail(email)) {
-        homeboxError(nameError, false);
+        homeboxError(emailError, false);
       }
       if (!message) {
-        homeboxError(nameError, false);
+        homeboxError(messageError, false);
       }
     }
   });
