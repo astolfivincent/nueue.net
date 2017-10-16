@@ -123,8 +123,8 @@ $homebox__background: rgba(20, 20, 20, .9);
 .homebox__form-loader-icon,
 %homebox__form-loader-icon {
   display: inline-block;
-  height: 1.2rem;
-  margin: 0 auto;
+  height: 1.25rem;
+  margin: 1px auto -2px;
   animation-name: homebox-loader-spin;
   animation-duration: 1s;
   animation-iteration-count: infinite;
