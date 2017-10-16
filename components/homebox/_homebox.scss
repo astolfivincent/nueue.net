@@ -120,7 +120,7 @@ $homebox__background: rgba(20, 20, 20, .9);
   @extend %homebox__form-message;
 
   &:empty {
-    display: none;
+    display: none !important;
   }
 }
 
