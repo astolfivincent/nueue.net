@@ -29,6 +29,17 @@ $(document).ready(function() {
       }
     }
 
+    function homeboxCleanErrors() {
+      $homeboxError.empty();
+    }
+
+    function homeboxError(error, clean) {
+      if (clean == true) {
+        homeboxCleanErrors();
+      }
+      $homeboxError.show().append(error);
+    }
+
     if (validateEmail(email) && message && name) {
       homeboxLoader(true);
       $.ajax({
@@ -45,23 +56,23 @@ $(document).ready(function() {
              $('.homebox__form-message').toggleClass('homebox__form-message-show');
            } else if (data == 'Invalid Email') {
              homeboxLoader(false);
-             $homeboxError.show().append(emailError);
+             homeboxError(emailError, true);
            } else if (data == 'Time Error'){
              homeboxLoader(false);
-             $homeboxError.show().append(timeError);
+             homeboxError(timeError, true);
            }
         }
       });
     } else {
-      $homeboxError.empty();
+      homeboxCleanErrors();
       if (!name) {
-        $homeboxError.show().append(nameError);
+        homeboxError(nameError, false);
       }
       if (!validateEmail(email)) {
-        $homeboxError.show().append(emailError);
+        homeboxError(nameError, false);
       }
       if (!message) {
-        $homeboxError.show().append(messageError);
+        homeboxError(nameError, false);
       }
     }
   });
