@@ -12,6 +12,7 @@ $(document).ready(function() {
     var nameError = '<p aria-live="polite">What\'s your name!?</p>'; // Name Error text
     var emailError = '<p aria-live="polite">Please enter a valid email address</p>'; // Email Error text
     var messageError = '<p aria-live="polite">Please enter a message</p>'; // Message Error text
+    var timeError = '<p aria-live="polite">Too many submissions; wait 20 seconds, try again.</p>';
     var name = $(".homebox__form input[name=name]").val();
     var email = $(".homebox__form input[name=email]").val();
     var message = $(".homebox__form textarea[name=message]").val();
@@ -45,8 +46,9 @@ $(document).ready(function() {
            } else if (data == 'Invalid Email') {
              homeboxLoader(false);
              $homeboxError.show().append(emailError);
-           } else {
-             console.log(data);
+           } else if (data == 'Time Error'){
+             homeboxLoader(false);
+             $homeboxError.show().append(timeError);
            }
         }
       });
