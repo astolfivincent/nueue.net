@@ -11,7 +11,7 @@ function validateEmail(email) {
 }
 
 function homeboxCleanErrors() {
-  $homeboxError.empty().hide();
+  $homeboxError.empty();
 }
 
 function homeboxError(error, clean) {

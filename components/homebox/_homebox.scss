@@ -118,6 +118,10 @@ $homebox__background: rgba(20, 20, 20, .9);
 .homebox__form-error,
 %homebox__form-error {
   @extend %homebox__form-message;
+
+  &:empty {
+    display: none;
+  }
 }
 
 .homebox__form-loader-icon,
