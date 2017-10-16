@@ -45,6 +45,8 @@ $(document).ready(function() {
            } else if (data == 'Invalid Email') {
              homeboxLoader(false);
              $homeboxError.show().append(emailError);
+           } else {
+             console.log(data);
            }
         }
       });
