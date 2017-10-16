@@ -4,9 +4,6 @@ var nameError = '<p aria-live="polite">What\'s your name!?</p>'; // Name Error t
 var emailError = '<p aria-live="polite">Please enter a valid email address</p>'; // Email Error text
 var messageError = '<p aria-live="polite">Please enter a message</p>'; // Message Error text
 var timeError = '<p aria-live="polite">Too many submissions; wait 20 seconds, try again.</p>';
-var name = $(".homebox__form input[name=name]").val();
-var email = $(".homebox__form input[name=email]").val();
-var message = $(".homebox__form textarea[name=message]").val();
 
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -38,9 +35,12 @@ function homeboxLoader(b) {
 
 $(document).ready(function() {
   $(".homebox__form").submit(function(event) {
+    var name = $(".homebox__form input[name=name]").val();
+    var email = $(".homebox__form input[name=email]").val();
+    var message = $(".homebox__form textarea[name=message]").val();
     event.preventDefault();
     homeboxCleanErrors();
-    
+
     if (validateEmail(email) && message && name) {
       homeboxLoader(true);
       $.ajax({
