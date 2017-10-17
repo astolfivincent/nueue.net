@@ -1,17 +1,28 @@
 $ = require('jQuery');
 var $homeboxError = $('.homebox__form-error');
-var nameError = '<p aria-live="polite">What\'s your name!?</p>'; // Name Error text
-var emailError = '<p aria-live="polite">Please enter a valid email address</p>'; // Email Error text
-var messageError = '<p aria-live="polite">Please enter a message</p>'; // Message Error text
-var timeError = '<p aria-live="polite">Too many submissions; wait 20 seconds, try again.</p>';
+var nameError = '<p data-error="0">What\'s your name!?</p>'; // Name Error text
+var emailError = '<p data-error="1">Please enter a valid email address</p>'; // Email Error text
+var messageError = '<p data-error="2">Please enter a message</p>'; // Message Error text
+var timeError = '<p data-error="3">Too many submissions; wait 20 seconds, try again.</p>';
 
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
 
+function ariaInvalidate(e, b) {
+  if (b) {
+    e.attr('aria-invalid', 'true');
+  } else {
+    e.attr('aria-invalid', 'false');
+  }
+}
+
 function homeboxCleanErrors() {
   $homeboxError.empty();
+  $('.homebox__form-item').each(function() {
+    ariaInvalidate($(this), false)
+  });
 }
 
 function homeboxError(error, clean) {
@@ -19,6 +30,10 @@ function homeboxError(error, clean) {
     homeboxCleanErrors();
   }
   $homeboxError.show().append(error);
+  $($homeboxError).find('p').each(function() {
+    var errorCode = $(this).attr('data-error');
+    ariaInvalidate($('.homebox__form-item[data-error="'+errorCode+'"]'), true);
+  });
 }
 
 function homeboxLoader(b) {
@@ -26,10 +41,10 @@ function homeboxLoader(b) {
   $homeboxFormLoader = $('.homebox__form-loader');
   if (b === true) {
     $homeboxFormSubmit.hide();
-    $homeboxFormLoader.show();
+    $homeboxFormLoader.show().focus();
   } else {
-    $homeboxFormSubmit.show();
     $homeboxFormLoader.hide();
+    $homeboxFormSubmit.show().focus();
   }
 }
 
@@ -43,6 +58,7 @@ $(document).ready(function() {
 
     if (validateEmail(email) && message && name) {
       homeboxLoader(true);
+      homeboxCleanErrors();
       $.ajax({
         type: "POST",
         url: '/form-submissions.php',
@@ -75,6 +91,7 @@ $(document).ready(function() {
       if (!message) {
         homeboxError(messageError, false);
       }
+      $homeboxError.focus();
     }
   });
 });

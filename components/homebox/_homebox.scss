@@ -118,6 +118,13 @@ $homebox__background: rgba(20, 20, 20, .9);
 .homebox__form-error,
 %homebox__form-error {
   @extend %homebox__form-message;
+  margin-top: 1.75rem;
+  margin-bottom: -1.25rem;
+
+  p {
+    margin: 0;
+    line-height: 1.75rem;
+  }
 
   &:empty {
     display: none !important;

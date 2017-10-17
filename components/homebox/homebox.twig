@@ -7,14 +7,15 @@
     <span>Submission Successful</span>
     <a class="homebox__form-link" href="/">Change of Scenery?</a>
   </div>
-  <form class="homebox__form">
+  <form class="homebox__form" tabindex="0" aria-label="Contact Form">
     <h2 class="homebox__form-title">Get in Touch</h2>
-    <input name="name" type="text" placeholder="Name" />
-    <input name="email" type="email" placeholder="Email" />
-    <textarea name="message" placeholder="Message"></textarea>
+    <input data-error="0" class="homebox__form-item" name="name" type="text" placeholder="Name" />
+    <input data-error="1" class="homebox__form-item"name="email" type="email" placeholder="Email" />
+    <textarea data-error="2" class="homebox__form-item" name="message" placeholder="Message"></textarea>
     <input name="submit" type="submit" value="Submit" />
-    <div class="homebox__form-loader" tabindex="0" aria-live="polite" aria-label="Submitting Form">
+    <div class="homebox__form-loader" tabindex="0" aria-live="polite" aria-label="Submitting form, please wait">
       <img class="homebox__form-loader-icon" src="images/loading.svg" />
     </div>
+    <div class="homebox__form-error" tabindex="0" aria-role="alert" aria-live="polite"></div>
   </form>
 </div>
