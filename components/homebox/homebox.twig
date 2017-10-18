@@ -8,10 +8,11 @@
         <img width="16" class="homebox__button-icon" src="/images/github.svg" />
         <span class="homebox__button-text">Checkout Nueue</span>
       </a>
-      <div class="homebox__form-message">
-        <div>Submission Successful</div>
+      <div class="homebox__form-message {% if showmessage == true %}homebox__form-message-show{% endif %}">
+        <div>{{ homebox.message|default('Submission Successful') }}</div>
         <a class="homebox__form-link" href="/">Change of Scenery?</a>
       </div>
+      {% if not (showform == false) %}
       <form class="homebox__form" tabindex="0" aria-label="Contact Form">
         <h2 class="homebox__form-title">Get in Touch</h2>
         <input data-error="0" class="homebox__form-item" name="name" type="text" placeholder="Name" />
@@ -23,6 +24,7 @@
         </div>
         <div class="homebox__form-error" tabindex="0" aria-role="alert" aria-live="polite"></div>
       </form>
+      {% endif %}
     </div>
   </div>
 </div>
