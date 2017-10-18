@@ -1,21 +1,28 @@
-<div class="homebox__content">
-  <a href="http://github.com/astolfivincent" aria-label="Github" class="homebox__button-link">
-    <img class="homebox__button-icon" src="images/github.svg" />
-    <span class="homebox__button-text">Checkout Nueue</span>
-  </a>
-  <div class="homebox__form-message">
-    <span>Submission Successful</span>
-    <a class="homebox__form-link" href="/">Change of Scenery?</a>
-  </div>
-  <form class="homebox__form" tabindex="0" aria-label="Contact Form">
-    <h2 class="homebox__form-title">Get in Touch</h2>
-    <input data-error="0" class="homebox__form-item" name="name" type="text" placeholder="Name" />
-    <input data-error="1" class="homebox__form-item"name="email" type="email" placeholder="Email" />
-    <textarea data-error="2" class="homebox__form-item" name="message" placeholder="Message"></textarea>
-    <input name="submit" type="submit" value="Submit" />
-    <div class="homebox__form-loader" tabindex="0" aria-live="polite" aria-label="Submitting form, please wait">
-      <img class="homebox__form-loader-icon" src="images/loading.svg" />
+<div class="homebox__wrapper">
+  <div class="homebox">
+    <div class="homebox__content">
+      <a href="/" aria-label="Nueue Logo">
+        <img height="56" class="homebox__logo" src="/images/logo.svg" />
+      </a>
+      <a href="http://github.com/astolfivincent" aria-label="Check out Nueue on Github" class="homebox__button-link">
+        <img width="16" class="homebox__button-icon" src="/images/github.svg" />
+        <span class="homebox__button-text">Checkout Nueue</span>
+      </a>
+      <div class="homebox__form-message">
+        <div>Submission Successful</div>
+        <a class="homebox__form-link" href="/">Change of Scenery?</a>
+      </div>
+      <form class="homebox__form" tabindex="0" aria-label="Contact Form">
+        <h2 class="homebox__form-title">Get in Touch</h2>
+        <input data-error="0" class="homebox__form-item" name="name" type="text" placeholder="Name" />
+        <input data-error="1" class="homebox__form-item"name="email" type="email" placeholder="Email" />
+        <textarea data-error="2" class="homebox__form-item" name="message" placeholder="Message"></textarea>
+        <input name="submit" type="submit" value="Submit" />
+        <div class="homebox__form-loader" tabindex="0" aria-live="polite" aria-label="Submitting form, please wait">
+          <img class="homebox__form-loader-icon" src="/images/loading.svg" />
+        </div>
+        <div class="homebox__form-error" tabindex="0" aria-role="alert" aria-live="polite"></div>
+      </form>
     </div>
-    <div class="homebox__form-error" tabindex="0" aria-role="alert" aria-live="polite"></div>
-  </form>
+  </div>
 </div>

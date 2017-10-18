@@ -14,6 +14,7 @@ var gulp             = require('gulp'),
     browserify       = require('gulp-browserify-globs'),
     browserSync      = require('browser-sync'),
     minifyCSS        = require('gulp-minify-css'),
+    twig             = require('gulp-twig');
     sassGlob         = require('gulp-sass-glob');
 
 // Build styleguide.
@@ -32,7 +33,7 @@ gulp.task('styleguide', $.shell.task([
 ));
 
 // Static server
-gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
+gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify', 'compile'], function() {
     browserSync.init({
         server: {
             baseDir: ".",
@@ -44,6 +45,8 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
     gulp.watch(['components/**/*.scss', 'scss/**/*.scss'], ['styles', 'lint']);
 
     gulp.watch(['components/**/*.{twig}', 'scss/**/*.{twig}'], ['styleguide', browserSync.reload]);
+
+    gulp.watch(['templates/**/*.twig', 'pages/**/*.twig', 'components/**/*.twig'], ['compile', browserSync.reload])
 
     gulp.watch(['components/**/*.js'], ['browserify', browserSync.reload]);
 
@@ -68,6 +71,15 @@ gulp.task('browserify', function () {
 
 gulp.task('default', function(){
     gulp.start('styleguide', 'styles');
+});
+
+gulp.task('compile', function () {
+'use strict';
+return gulp.src('pages/*.twig')
+  .pipe(twig({
+    data: {
+    }
+  })).pipe(gulp.dest('./'));
 });
 
 gulp.task('lint', function () {

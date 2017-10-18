@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>{{data.title}}</title>
+  <meta name="description" content="Web Development, Design, and Marketing. Check out Nueue on Github.">
+  <meta name="author" content="Nueue">
+  <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+
+  <link rel="shortcut icon" href="/images/favicon.png" />
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  {% include '../components/background/background.twig' %}
+  {% if data.alert|length > 0 %}
+    {% include '../components/alert/alert.twig' with {'alert': data.alert} %}
+  {% endif %}
+  <div class="content">
+    {% block content %}
+      this will change
+    {% endblock %}
+  </div>
+</body>
+<script async type="text/javascript" src="/js/bundle.js"></script>
+</html>

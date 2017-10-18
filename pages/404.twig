@@ -1,0 +1,8 @@
+{% extends "../templates/html.twig" %}
+{% set data = { 
+  'title': 'Nueue - Page not found',
+  'alert': '<strong>404:</strong> Sorry, no page exists here. Maybe try another!'
+  } %}
+{% block content %}
+  {% include '../components/homebox/homebox.twig' %}
+{% endblock %}

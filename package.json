@@ -44,6 +44,7 @@
     "gulp-sass-lint": "^1.1.1",
     "gulp-shell": "^0.2.9",
     "gulp-size": "^1.1.0",
+    "gulp-twig": "^1.1.1",
     "imagesloaded": "^4.1.0",
     "jquery": "^2.2.0",
     "kss": "^3.0.0-beta.18",
