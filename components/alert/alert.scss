@@ -1,0 +1,51 @@
+// alert
+//
+// Markup: alert.twig
+//
+// Style guide: alert
+
+.alert,
+%alert {
+  background: $transparent__dark;
+  color: $white;
+  text-align: center;
+  padding: .5rem .5rem .55rem;
+
+  @include breakpoint(450px) {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.alert__icon,
+%alert__icon {
+  height: 1rem;
+  display: inline;
+  vertical-align: middle;
+  margin: -1px 5px 0 0;
+
+  @include breakpoint(450px) {
+    display: inline-block;
+  }
+}
+
+.alert__message,
+%alert__message {
+  display: inline;
+  vertical-align: middle;
+  font-weight: 100;
+  font-size: .85rem;
+  line-height: 1rem;
+  text-transform: lowercase;
+
+  @include breakpoint(450px) {
+    display: inline-block;
+  }
+}
+
+.alert__hidden,
+%alert__hidden {
+  opacity: 0;
+  transition: opacity 2s;
+}

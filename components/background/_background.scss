@@ -4,8 +4,6 @@
 //
 // Style guide: background
 
-@import '../components/homebox/homebox';
-
 %background,
 .background {
   height: 100%;
@@ -29,23 +27,6 @@
   transition: opacity 1s, filter 2s;
   width: auto;
   height: auto;
-}
-
-.background__curator,
-%background__curator {
-  display: none;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  padding: .5rem .75rem;
-  background: $homebox__background;
-  border-radius: 2px;
-  color: $white;
-  max-width: 7rem;
-  text-align: center;
-  font-size: .75rem;
-  line-height: 1rem;
-  cursor: pointer;
 }
 
 %background__image-unhide,

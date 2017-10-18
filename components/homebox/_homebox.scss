@@ -5,7 +5,6 @@
 // Style guide: homebox
 
 $homebox__font-size: .75rem;
-$homebox__background: rgba(20, 20, 20, .9);
 
 .homebox__wrapper,
 %homebox__wrapper {
@@ -27,7 +26,7 @@ $homebox__background: rgba(20, 20, 20, .9);
 
 .homebox,
 %homebox {
-  background: $homebox__background;
+  background: $transparent__dark;
   align-self: center;
   width: 100%;
   height: 100%;
