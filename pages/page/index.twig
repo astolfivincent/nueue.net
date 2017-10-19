@@ -4,23 +4,6 @@
   } %}
 {% block content %}
 <div class="layout-max">
-  <div class="page">
-    <h1 class="page__title">Vivamus id massa quis felis fringilla ultrices</h1>
-    <div class="page__date">Posted Aug 13, 2017 by Vincent Astolfi</div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam turpis purus, ornare vitae sollicitudin in, facilisis in turpis. Morbi id tortor porta, fringilla nulla at, placerat nunc. Cras nisl tortor, viverra in augue vel, tempor maximus odio. Morbi sodales ut lectus condimentum feugiat. Suspendisse ullamcorper vehicula diam at vulputate.</p>
-    <img width="600" height="300" src="https://picsum.photos/600/300/?random" style="display: inline-block;max-width: 100%;" />
-    <p>Vivamus id massa quis felis fringilla ultrices. Nunc vulputate diam vel orci placerat, at laoreet leo fermentum. In hac habitasse platea dictumst. Duis facilisis tortor in nunc fringilla, nec egestas diam cursus. Vestibulum efficitur faucibus rutrum. Nullam at nisi lacus. Maecenas et nisi leo. Quisque vel finibus arcu. Orci varius natoque penatibus</p>
-    <p>In sem sagittis pellentesque non ac sem. Praesent sed placerat dolor. Fusce sed tellus orci. In quam elit, ultricies id blandit eu, dapibus quis nibh. Vestibulum efficitur faucibus rutrum. Nullam at nisi lacus. Maecenas et nisi leo. Quisque vel finibus arcu. Orci varius natoque penatibus</p>
-    <div class="page__author-block">
-      <h2 class="page__author-heading">About the Author</h2>
-      <hr />
-      <p class="page__author-content">In sem sagittis pellentesque non ac sem. Praesent sed placerat dolor. Fusce sed tellus orci. In quam elit, ultricies id blandit eu, dapibus quis nibh. Vestibulum efficitur faucibus rutrum. Nullam at nisi lacus. Maecenas et nisi leo. Quisque vel finibus arcu. Orci varius natoque penatibus</p>
-      <img class="page__author-image" src="/images/vincent.jpg" />
-      <div class="page__author-info">
-        <div class="page__author-name">Vincent Astolfi</div>
-        <div class="page__author-title">Creative Director, Nueue</div>
-      </div>
-      </div>
-  </div>
+  {% include '../../components/page/page.twig' %}
 </div>
 {% endblock %}
