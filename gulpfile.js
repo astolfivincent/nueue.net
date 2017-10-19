@@ -75,7 +75,7 @@ gulp.task('default', function(){
 
 gulp.task('compile', function () {
 'use strict';
-return gulp.src('pages/*.twig')
+return gulp.src('pages/**/*.twig')
   .pipe(twig({
     data: {
     }

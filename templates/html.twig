@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{{data.title}}</title>
-  <meta name="description" content="Web Development, Branding, Marketing.">
+  <title>{{data.title|default('Nueue - Web Development, Branding, Marketing.')}}</title>
+  <meta name="description" content="Web Development, Branding, Marketing. Check out Nueue on github.">
   <meta name="author" content="Nueue">
   <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
@@ -23,6 +23,9 @@
   {% include '../components/background/background.twig' %}
   {% if data.alert|length > 0 %}
     {% include '../components/alert/alert.twig' with {'alert': data.alert} %}
+  {% endif %}
+  {% if not (data.header == false) %}
+    {% include '../components/header/header.twig' %}
   {% endif %}
   <div class="content">
     {% block content %}

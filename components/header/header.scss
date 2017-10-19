@@ -1,0 +1,53 @@
+// Header
+//
+// Markup: header.twig
+//
+// Style guide: header
+
+@import '../components/layout-max/layout-max';
+
+.header,
+%header {
+  background: $transparent__dark;
+}
+
+.header__content,
+%header__content {
+  @extend %layout-max;
+  padding: .75rem 1.25rem;
+  box-sizing: border-box;
+  display: table;
+
+  @include breakpoint(600px) {
+    padding: .75rem 2rem;
+  }
+}
+
+.header__logo-link,
+%header__logo-link {
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+}
+
+.header__logo,
+%header__logo {
+  display: block;
+  height: 2.25rem;
+}
+
+.header__nav,
+%header__nav {
+  list-style-type: none;
+  display: table-cell;
+  text-align: right;
+  margin: 0;
+}
+
+.header__nav-item,
+%header__nav-item {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0 .5rem;
+  font-size: .9rem;
+}

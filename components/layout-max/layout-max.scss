@@ -1,0 +1,13 @@
+// Layout Max
+//
+// Markup: layout-max.twig
+//
+// Style guide: layout-max
+
+.layout-max,
+%layout-max {
+  max-width: 42rem;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}

@@ -7,11 +7,9 @@
 %background,
 .background {
   height: 100%;
-  min-width: 100%;
-  max-width: 100%;
+  width: 100%;
   z-index: -1;
-  position: absolute;
-  top: 0;
+  position: fixed;
   overflow: hidden;
   background: #efefef;
 }
@@ -21,12 +19,13 @@
   display: block;
   min-width: 105%;
   min-height: 105%;
+  max-width: none;
+  width: auto;
+  height: auto;
   margin: -2%;
   opacity: 0;
   filter: blur(9px);
   transition: opacity 1s, filter 2s;
-  width: auto;
-  height: auto;
 }
 
 %background__image-unhide,
