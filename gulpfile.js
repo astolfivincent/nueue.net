@@ -6,15 +6,18 @@ var gulp             = require('gulp'),
     postcss          = require('gulp-postcss'),
     flatten          = require('gulp-flatten'),
     del              = require('del'),
-    fileinclude      = require('gulp-file-include'),
     path             = require('path'),
-    gulp             = require('gulp'),
+    rename           = require('gulp-rename'),
     sassLint         = require('gulp-sass-lint'),
     eslint           = require('gulp-eslint'),
     browserify       = require('gulp-browserify-globs'),
     browserSync      = require('browser-sync'),
     minifyCSS        = require('gulp-minify-css'),
-    twig             = require('gulp-twig');
+    twig             = require('gulp-twig'),
+    marked           = require('marked'),
+    replace          = require('gulp-replace-path'),
+    matter           = require('gray-matter'),
+    each             = require('gulp-each'),
     sassGlob         = require('gulp-sass-glob');
 
 // Build styleguide.
@@ -46,7 +49,7 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify', 'compile'], fu
 
     gulp.watch(['components/**/*.{twig}', 'scss/**/*.{twig}'], ['styleguide', browserSync.reload]);
 
-    gulp.watch(['templates/**/*.twig', 'pages/**/*.twig', 'components/**/*.twig'], ['compile', browserSync.reload])
+    gulp.watch(['templates/**/*.twig', 'pages/**/*.twig', 'components/**/*.twig', 'content/**/*.md'], ['compile', browserSync.reload])
 
     gulp.watch(['components/**/*.js'], ['browserify', browserSync.reload]);
 
@@ -74,12 +77,23 @@ gulp.task('default', function(){
 });
 
 gulp.task('compile', function () {
-'use strict';
-return gulp.src('pages/**/*.twig')
-  .pipe(twig({
-    data: {
-    }
-  })).pipe(gulp.dest('./'));
+  return gulp.src('content/**/*.md')
+       .pipe(each(function(content, file, callback) {
+           vars = matter(content);
+           vars.data.content = marked(vars.content);
+           name = file.path.replace(/^.*[\\\/]/, '').replace('.md', '').replace('index','');
+           var newContent = gulp.src('templates/html.twig')
+            .pipe(twig({
+               data: vars
+             }))
+             .pipe(rename({
+                dirname: name,
+                basename: 'index',
+                extname: '.html'
+             }))
+             .pipe(gulp.dest('./'));
+             callback(null, newContent);
+       }));
 });
 
 gulp.task('lint', function () {

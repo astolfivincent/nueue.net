@@ -28,9 +28,13 @@
     {% include '../components/header/header.twig' %}
   {% endif %}
   <div class="content">
-    {% block content %}
-      this will change
-    {% endblock %}
+    {% if data.content|length > 0 %}
+      <div class="layout-max">
+        {{data.content}}
+      </div>
+    {% else %}
+      {% include '../components/homebox/homebox.twig' with data.homebox %}
+    {% endif %}
   </div>
 </body>
 <script async type="text/javascript" src="/js/bundle.js"></script>
