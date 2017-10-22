@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{{data.title|default('Nueue - Web Development, Branding, Marketing.')}}</title>
+  <title>Nueue - {{data.title|default('Web Development, Branding, Marketing.')}}</title>
   <meta name="description" content="Web Development, Branding, Marketing. Check out Nueue on github.">
   <meta name="author" content="Nueue">
   <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
@@ -30,12 +30,15 @@
   <div class="content">
     {% if data.content|length > 0 %}
       <div class="layout-max">
-        {{data.content}}
+        {% include '../components/page/page.twig' with data %}
       </div>
     {% else %}
       {% include '../components/homebox/homebox.twig' with data.homebox %}
     {% endif %}
   </div>
+  {% if not (data.footer == false) %}
+    {% include '../components/footer/footer.twig' %}
+  {% endif %}
 </body>
 <script async type="text/javascript" src="/js/bundle.js"></script>
 </html>

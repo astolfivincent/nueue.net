@@ -2,6 +2,7 @@
 var gulp             = require('gulp'),
     $                = require('gulp-load-plugins')(),
     sass             = require('gulp-sass'),
+    fs               = require('fs'),
     autoprefixer     = require('autoprefixer'),
     postcss          = require('gulp-postcss'),
     flatten          = require('gulp-flatten'),
@@ -78,22 +79,22 @@ gulp.task('default', function(){
 
 gulp.task('compile', function () {
   return gulp.src('content/**/*.md')
-       .pipe(each(function(content, file, callback) {
-           vars = matter(content);
-           vars.data.content = marked(vars.content);
-           name = file.path.replace(/^.*[\\\/]/, '').replace('.md', '').replace('index','');
-           var newContent = gulp.src('templates/html.twig')
-            .pipe(twig({
-               data: vars
-             }))
-             .pipe(rename({
-                dirname: name,
-                basename: 'index',
-                extname: '.html'
-             }))
-             .pipe(gulp.dest('./'));
-             callback(null, newContent);
-       }));
+    .pipe(each(function(content, file, callback) {
+      frontMatter = matter(content);
+      frontMatter.data.content = marked(frontMatter.content);
+      fileName = file.path.replace(/^.*[\\\/]/, '').replace('.md', '').replace('index','');
+      var page = gulp.src('templates/html.twig')
+        .pipe(twig({
+           data: frontMatter
+         }))
+         .pipe(rename({
+            dirname: fileName,
+            basename: 'index',
+            extname: '.html'
+         }))
+         .pipe(gulp.dest('./'));
+       callback(null, page);
+    }));
 });
 
 gulp.task('lint', function () {

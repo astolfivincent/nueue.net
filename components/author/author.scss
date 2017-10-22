@@ -1,0 +1,56 @@
+// Author
+//
+// Markup: author.twig
+//
+// Style guide: author
+
+.author,
+%author {
+  text-align: center;
+  background: $transparent__dark;
+  color: $white;
+  display: block;
+  padding: 2rem;
+}
+
+.author__heading,
+%author__heading {
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+}
+
+.author__image,
+%author__image {
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  box-shadow: 0 -1px 3px rgba(167, 167, 167, .5);
+}
+
+.author__info,
+%author__info {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: .5rem;
+  text-align: left;
+}
+
+.author__name,
+%author__name {
+  margin-bottom: .25rem;
+}
+
+.author__title,
+%author__title {
+  font-size: .9rem;
+  font-weight: 100;
+}
+
+.author__content,
+%author__content {
+  font-weight: 100;
+  text-align: center;
+  margin: 1rem 0 1.75rem;
+}
