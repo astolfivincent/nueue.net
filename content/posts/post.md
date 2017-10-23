@@ -1,5 +1,5 @@
 ---
-title: SIMPLE STATIC SITE GENERATOR USING TWIG AND MARKDOWN
+title: Simple static site generator using twig and markdown
 date: Jan 17, 2017
 image: http://nueue.net/images/backgrounds/image-66.jpg
 ---
