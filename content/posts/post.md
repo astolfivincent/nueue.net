@@ -1,7 +1,8 @@
 ---
 title: Simple static site generator using twig and markdown
-date: Jan 17, 2017
+date: 01/17/2017
 image: http://nueue.net/images/backgrounds/image-66.jpg
+excerpt: Integer eget justo sollicitudin, malesuada enim in, ullamcorper eros. Aenean 
 ---
 
 Integer eget justo sollicitudin, malesuada enim in, ullamcorper eros. Aenean et

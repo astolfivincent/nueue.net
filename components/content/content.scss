@@ -1,13 +1,13 @@
-// Page
+// Content
 //
-// Markup: page.twig
+// Markup: content.twig
 //
-// Style guide: page
+// Style guide: content
 
 @import '../components/header/header';
 
-.page__wrapper,
-%page__wrapper {
+.content__wrapper,
+%content__wrapper {
   margin: 0;
   position: relative;
 
@@ -19,8 +19,8 @@
   }
 }
 
-.page,
-%page {
+.content,
+%content {
   background: $transparent__light;
   padding: .5rem 1.5rem;
 
@@ -29,8 +29,8 @@
   }
 }
 
-.page__content,
-%page__content {
+.content__body,
+%content__body {
   img {
     display: block;
     max-width: 100%;
@@ -38,8 +38,8 @@
   }
 }
 
-.page__masthead,
-%page__masthead {
+.content__masthead,
+%content__masthead {
   overflow: hidden;
   position: relative;
   background: $transparent__light;
@@ -50,14 +50,14 @@
   }
 }
 
-.page__masthead-image,
-%page__masthead-image {
+.content__masthead-image,
+%content__masthead-image {
   display: block;
   width: 100%;
 }
 
-.page__masthead-content,
-%page__masthead-content {
+.content__masthead-content,
+%content__masthead-content {
   padding: 1.5rem 1.5rem 1.75rem;
   text-transform: uppercase;
 
@@ -66,8 +66,8 @@
   }
 }
 
-.page__title,
-%page__title {
+.content__title,
+%content__title {
   margin: 0 auto 1rem;
   line-height: 2.35rem;
   font-size: 1.85rem;
@@ -79,8 +79,8 @@
   }
 }
 
-.page__date,
-%page__date {
+.content__date,
+%content__date {
   font-size: .9rem;
   line-height: 1.25rem;
 }

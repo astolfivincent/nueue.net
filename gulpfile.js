@@ -37,7 +37,7 @@ gulp.task('styleguide', $.shell.task([
 ));
 
 // Static server
-gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify', 'clearlisting', 'compile'], function() {
+gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
     browserSync.init({
         server: {
             baseDir: ".",
@@ -50,7 +50,7 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify', 'clearlisting'
 
     gulp.watch(['components/**/*.{twig}', 'scss/**/*.{twig}'], ['styleguide', browserSync.reload]);
 
-    gulp.watch(['templates/**/*.twig', 'components/**/*.twig', 'content/**/*.md', 'gulpfile.js'], ['clearlisting', 'compile', browserSync.reload])
+    gulp.watch(['templates/**/*.twig', 'components/**/*.twig', 'content/**/*.md'], [browserSync.reload])
 
     gulp.watch(['components/**/*.js'], ['browserify', browserSync.reload]);
 
@@ -75,38 +75,6 @@ gulp.task('browserify', function () {
 
 gulp.task('default', function(){
     gulp.start('styleguide', 'styles');
-});
-
-gulp.task('clearlisting', function() {
-  fs.writeFile('content/content.json', '[]');
-});
-
-gulp.task('compile', function () {
-  return gulp.src('content/**/*.md')
-    .pipe(each(function(content, file, callback) {
-      frontMatter = matter(content);
-      frontMatter.data.content = marked(frontMatter.content);
-      frontMatter.data.url = file.path.replace(/^.*[\\\/]/, '').replace('.md', '').replace('index','');
-      console.log(file.path);
-      fs.readFile('content/content.json', (err, json) => {
-        let jsonArray = JSON.parse(json);
-        jsonArray.push({
-          data: frontMatter.data
-        });
-        fs.writeFile('content/content.json', JSON.stringify(jsonArray));
-      });
-      var page = gulp.src('templates/html.twig')
-        .pipe(twig({
-           data: frontMatter
-         }))
-         .pipe(rename({
-            dirname: frontMatter.data.url,
-            basename: 'index',
-            extname: '.html'
-         }))
-         .pipe(gulp.dest('./'));
-       callback(null, page);
-    }));
 });
 
 gulp.task('lint', function () {

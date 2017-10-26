@@ -16,24 +16,12 @@
   <body>
     {% include '../components/background/background.twig' %}
 
-    {% if data.alert|length > 0 %}
-      {% include '../components/alert/alert.twig' with {'alert': data.alert} %}
-    {% endif %}
-
-    {% if not (data.header == false) %}
-      {% include '../components/header/header.twig' %}
-    {% endif %}
-
-    {% if data.content|length > 0 %}
-      <div class="layout-max">
-        {% include '../components/page/page.twig' with data %}
-      </div>
-    {% else %}
-      {% include '../components/homebox/homebox.twig' with data.homebox %}
-    {% endif %}
-
-    {% if not (data.footer == false) %}
-      {% include '../components/footer/footer.twig' %}
+    {% if data.type == 'posts' %}
+      {% include 'posts.twig' with data %}
+    {% elseif (data.type == 'pages') or (data.type == 'index') %}
+      {% include 'pages.twig' with data %}
+    {% elseif (data.listing.type == 'listing') %}
+      {% include 'listing.twig' with data %}
     {% endif %}
     <script async type="text/javascript" src="/js/bundle.js"></script>
   </body>

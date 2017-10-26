@@ -1,0 +1,11 @@
+{% if not (data.header == false) %}
+  {% include '../components/header/header.twig' %}
+{% endif %}
+
+<div class="layout-max">
+  {% include '../components/listing/listing.twig' with data %}
+</div>
+
+{% if not (data.footer == false) %}
+  {% include '../components/footer/footer.twig' %}
+{% endif %}

@@ -1,0 +1,11 @@
+<div class="listing">
+  <h1>{{listing.title}}</h1>
+  {% for key, item in data.items %}
+    <div class="listing__item">
+      <h2 class="listing__item-title">{{item.title}}</h2>
+      <div class="listing__item-content">
+        {{item.excerpt}}
+      </div>
+    </div>
+  {% endfor %}
+</div>
