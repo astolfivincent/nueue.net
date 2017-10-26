@@ -1,15 +1,13 @@
 <div class="content__wrapper">
-  <div class="content__masthead">
-    <div class="content__masthead-content">
-      <h1 class="content__title">{{data.title|default('Don\t forget your title!')}}</h1>
-      <div class="content__date">Published {{data.date}} by Vincent Astolfi</div>
-    </div>
-    <img class="content__masthead-image" width="676" height="338" src="{{data.image|default('http://nueue.net/images/backgrounds/image-14.jpg')}}" />
-  </div>
+  {% if not (data.masthead == false) %}
+    {% include '../masthead/masthead.twig' with data %}
+  {% endif %}
   <div class="content">
     <div class="content__body">
       {{data.content}}
     </div>
   </div>
-  {% include '../author/author.twig' %}
+  {% if not (data.author == false) %}
+    {% include '../author/author.twig' %}
+  {% endif %}
 </div>

@@ -11,7 +11,7 @@
   margin: 0;
   position: relative;
 
-  @include breakpoint(676px) {
+  @include breakpoint($breakpoint__medium) {
     border-radius: 2px;
     box-shadow: 0 0 2px rgba(51, 51, 51, .15);
     margin: 2.5rem;
@@ -24,7 +24,7 @@
   background: $transparent__light;
   padding: .5rem 1.5rem;
 
-  @include breakpoint(676px) {
+  @include breakpoint($breakpoint__medium) {
     padding: 1rem 2rem;
   }
 }
@@ -36,51 +36,4 @@
     max-width: 100%;
     width: 100%;
   }
-}
-
-.content__masthead,
-%content__masthead {
-  overflow: hidden;
-  position: relative;
-  background: $transparent__light;
-  color: $black;
-
-  @include breakpoint(676px) {
-    border-radius: 2px 2px 0 0;
-  }
-}
-
-.content__masthead-image,
-%content__masthead-image {
-  display: block;
-  width: 100%;
-}
-
-.content__masthead-content,
-%content__masthead-content {
-  padding: 1.5rem 1.5rem 1.75rem;
-  text-transform: uppercase;
-
-  @include breakpoint(676px) {
-    padding: 2rem 1.75rem;
-  }
-}
-
-.content__title,
-%content__title {
-  margin: 0 auto 1rem;
-  line-height: 2.35rem;
-  font-size: 1.85rem;
-  font-weight: 600;
-  width: 100%;
-
-  @include breakpoint(676px) {
-    font-size: 2rem;
-  }
-}
-
-.content__date,
-%content__date {
-  font-size: .9rem;
-  line-height: 1.25rem;
 }

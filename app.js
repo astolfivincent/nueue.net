@@ -84,6 +84,7 @@ function compile_all() {
 
   compile_each(contentPath+'/listings/*.md', function(content, file, frontMatter) {
     frontMatter.data.type = 'listing';
+    frontMatter.data.masthead = 'false';
     path = get_json_path(frontMatter.data.content_type);
     fs.readFile(path, (err, json) => {
       var jsonArray = parse_JSON(json);

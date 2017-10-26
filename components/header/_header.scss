@@ -18,7 +18,7 @@
   box-sizing: border-box;
   display: table;
 
-  @include breakpoint(676px) {
+  @include breakpoint($breakpoint__medium) {
     padding: .75rem 2rem;
   }
 }
