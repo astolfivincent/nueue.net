@@ -1,4 +1,4 @@
-$ = require('jQuery');
+$ = require('jquery');
 function alertMessage(message) {
   var alert = $('<div>').addClass('alert').attr({
     'tabindex': '0',
