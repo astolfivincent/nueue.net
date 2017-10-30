@@ -1,3 +1,3 @@
-$ = require('jQuery');
+$ = require('jquery');
 $(document).ready(function() {
 });

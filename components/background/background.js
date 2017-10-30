@@ -1,4 +1,4 @@
-$ = require('jQuery');
+$ = require('jquery');
 $(document).ready(function() {
   function backgroundRand(min, max) {
     return parseInt(Math.random() * (max - min)) + min;
