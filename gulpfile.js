@@ -8,17 +8,12 @@ var gulp             = require('gulp'),
     flatten          = require('gulp-flatten'),
     del              = require('del'),
     path             = require('path'),
-    rename           = require('gulp-rename'),
     sassLint         = require('gulp-sass-lint'),
     eslint           = require('gulp-eslint'),
     browserify       = require('gulp-browserify-globs'),
     browserSync      = require('browser-sync'),
     minifyCSS        = require('gulp-minify-css'),
-    twig             = require('gulp-twig'),
-    marked           = require('marked'),
-    replace          = require('gulp-replace-path'),
     matter           = require('gray-matter'),
-    each             = require('gulp-each'),
     sassGlob         = require('gulp-sass-glob');
 
 // Build styleguide.
@@ -56,6 +51,8 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
 
 });
 
+gulp.task ('build', ['styles', 'browserify', 'styleguide', 'compile']);
+
 gulp.task('styles', function() {
     return gulp.src('scss/styles.scss')
         .pipe(sassGlob())
@@ -71,10 +68,6 @@ gulp.task('browserify', function () {
         uglify: true
     })
         .pipe(gulp.dest('js'));
-});
-
-gulp.task('default', function(){
-    gulp.start('styleguide', 'styles');
 });
 
 gulp.task('lint', function () {
