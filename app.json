@@ -1,0 +1,20 @@
+{
+  "name": "nueue",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/weibeld/heroku-buildpack-run.git"
+    }
+  ]
+}
