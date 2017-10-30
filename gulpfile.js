@@ -51,7 +51,7 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
 
 });
 
-gulp.task ('build', ['styles', 'browserify', 'styleguide', 'compile']);
+gulp.task ('build', ['styles', 'browserify', 'styleguide']);
 
 gulp.task('styles', function() {
     return gulp.src('scss/styles.scss')
