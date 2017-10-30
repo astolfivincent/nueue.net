@@ -1,11 +1,15 @@
-<div class="listing">
-  <h1>{{listing.title}}</h1>
-  {% for key, item in data.items %}
-    <div class="listing__item">
-      <h2 class="listing__item-title">{{item.title}}</h2>
-      <div class="listing__item-content">
-        {{item.excerpt}}
+<div class="listing__wrapper">
+  <div class="listing">
+    <h1 class="listing__heading">{{listing.title}}</h1>
+    {% for key, item in data.items %}
+      <div class="listing__item">
+        <a class="listing__item-title-link" href="/{{item.url}}">
+          <h2 class="listing__item-title">{{item.title}}</h2>
+        </a>
+        <div class="listing__item-content">
+          {{item.excerpt}}
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
