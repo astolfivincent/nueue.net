@@ -1,0 +1,5 @@
+{% if data.alert|length > 0 %}
+  {% include '../components/alert/alert.twig' with {'alert': data.alert} %}
+{% endif %}
+
+{% include '../components/homebox/homebox.twig' with data.homebox %}

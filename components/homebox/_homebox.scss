@@ -13,9 +13,8 @@ $homebox__font-size: .75rem;
   width: 100%;
 
   @include breakpoint(450px) {
-    display: flex;
     margin: 0 auto;
-    height: initial;
+    display: flex;
   }
 }
 

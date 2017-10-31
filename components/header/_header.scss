@@ -18,7 +18,7 @@
   box-sizing: border-box;
   display: table;
 
-  @include breakpoint(600px) {
+  @include breakpoint($breakpoint__medium) {
     padding: .75rem 2rem;
   }
 }
@@ -38,9 +38,13 @@
 
 .header__nav,
 %header__nav {
-  list-style-type: none;
   display: table-cell;
   text-align: right;
+}
+
+.header__nav-listing,
+%header__nav-listing {
+  list-style-type: none;
   margin: 0;
 }
 
@@ -50,4 +54,14 @@
   text-transform: uppercase;
   margin: 0 .5rem;
   font-size: .9rem;
+  vertical-align: middle;
+
+  a {
+    border-bottom: 0;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid;
+    }
+  }
 }

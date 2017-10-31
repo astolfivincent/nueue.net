@@ -1,4 +1,4 @@
-$ = require('jQuery');
+$ = require('jquery');
 function alertMessage(message) {
   var alert = $('<div>').addClass('alert').attr({
     'tabindex': '0',
@@ -6,7 +6,7 @@ function alertMessage(message) {
     'aria-role': 'alert'
   });
   var alerticon = $('<img>').addClass('alert__icon').attr({
-    'src': '/images/alert.svg',
+    'src': '/assets/images/alert.svg',
     'alt': 'Alert Icon'
   });
   var alertmessage = $('<div>').addClass('alert__message').html(message);

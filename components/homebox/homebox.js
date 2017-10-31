@@ -1,4 +1,4 @@
-$ = require('jQuery');
+$ = require('jquery');
 var $homeboxError = $('.homebox__form-error');
 var nameError = '<p data-error="0">What\'s your name!?</p>'; // Name Error text
 var emailError = '<p data-error="1">Please enter a valid email address</p>'; // Email Error text
@@ -61,7 +61,7 @@ $(document).ready(function() {
       homeboxCleanErrors();
       $.ajax({
         type: "POST",
-        url: '/form-submissions.php',
+        url: '/assets/form-submissions.php',
         data: {
           name: name,
           email: email,

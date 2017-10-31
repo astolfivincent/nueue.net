@@ -1,0 +1,46 @@
+// Listing
+//
+// Markup: listing.twig
+//
+// Style guide: listing
+
+@import '../components/content/content';
+
+.listing__wrapper,
+%listing__wrapper {
+  @extend %content__wrapper;
+}
+
+.listing,
+%listing {
+  @extend %content;
+
+  @include breakpoint($breakpoint__medium) {
+    padding: 2rem;
+  }
+}
+
+.listing__heading,
+%listing__heading {
+  margin: 0 0 2rem;
+}
+
+.listing__item-title-link,
+%listing__item-title-link {
+  display: block;
+  margin: 1rem 0;
+  border: 0;
+  color: $black;
+  text-decoration: underline;
+
+  &:hover .listing__item-title {
+    color: $white;
+    background: $black;
+    text-decoration: none;
+  }
+}
+
+.listing__item-title,
+%listing__item-title {
+  display: inline;
+}

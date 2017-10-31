@@ -1,0 +1,45 @@
+// Footer
+//
+// Markup: footer.twig
+//
+// Style guide: footer
+
+@import '../components/header/header';
+
+.footer,
+%footer {
+  background: $transparent__light;
+
+  @include breakpoint($breakpoint__medium) {
+    background: $transparent__dark;
+  }
+}
+
+.footer__content,
+%footer__content {
+  @extend %header__content;
+}
+
+.footer__nav,
+%footer__nav {
+  @extend %header__nav;
+  padding: 1rem 0;
+}
+
+.footer__nav-listing,
+%footer__nav-listing {
+  @extend %header__nav-listing;
+}
+
+.footer__nav-item,
+%footer__nav-item {
+  @extend %header__nav-item;
+
+  a {
+    color: $black;
+
+    @include breakpoint($breakpoint__medium) {
+      color: $white;
+    }
+  }
+}

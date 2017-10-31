@@ -1,5 +1,13 @@
-<div class="content">
-  {% block content %}
-    will change
-  {% endblock %}
+<div class="content__wrapper">
+  {% if not (data.masthead == false) %}
+    {% include '../masthead/masthead.twig' with data %}
+  {% endif %}
+  <div class="content">
+    <div class="content__body">
+      {{data.content}}
+    </div>
+  </div>
+  {% if not (data.author == false) %}
+    {% include '../author/author.twig' %}
+  {% endif %}
 </div>

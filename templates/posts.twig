@@ -1,0 +1,13 @@
+{% if not (data.header == false) %}
+  {% include '../components/header/header.twig' %}
+{% endif %}
+
+{% if data.content|length > 0 %}
+<div class="layout-max">
+  {% include '../components/content/content.twig' with data %}
+</div>
+{% endif %}
+
+{% if not (data.footer == false) %}
+  {% include '../components/footer/footer.twig' %}
+{% endif %}

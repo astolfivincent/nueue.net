@@ -1,6 +1,7 @@
 ---
-title: Nueue - Web Development, Branding, Marketing.
+title: Web Development, Branding, Marketing.
 header: false
+footer: false
 homebox:
   showmessage: false
   showform: true
