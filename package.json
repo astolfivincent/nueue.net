@@ -60,13 +60,5 @@
     "postcss": "^5.2.18",
     "run-sequence": "^0.3.6",
     "twig": "^1.10.5"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browserify-shim": {
-    "jquery": "global:$"
   }
 }
