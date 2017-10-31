@@ -24,7 +24,7 @@ gulp.task('styleguide', $.shell.task([
     ], {
         templateData: {
             source:       'components',
-            destination:  'styleguide',
+            destination:  'public/styleguide',
             builder:  'builder/twig',
             namespace: 'nueue:.'
         }
@@ -35,10 +35,10 @@ gulp.task('styleguide', $.shell.task([
 gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
     browserSync.init({
         server: {
-            baseDir: ".",
+            baseDir: "public",
             https: false
         },
-        startPath: "/styleguide"
+        startPath: "styleguide"
     });
 
     gulp.watch(['components/**/*.scss', 'scss/**/*.scss'], ['styles', 'lint']);
@@ -54,12 +54,12 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
 gulp.task ('build', ['styles', 'browserify', 'styleguide']);
 
 gulp.task('styles', function() {
-    return gulp.src('scss/styles.scss')
+    return gulp.src('scss/assets/styles.scss')
         .pipe(sassGlob())
         .pipe(sass())
         .pipe(postcss([ autoprefixer({ browsers: ['last 4 versions'] }) ]))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('css')).pipe(browserSync.stream());
+        .pipe(gulp.dest('public/css')).pipe(browserSync.stream());
 });
 
 gulp.task('browserify', function () {
@@ -67,7 +67,7 @@ gulp.task('browserify', function () {
         debug: false,
         uglify: true
     })
-        .pipe(gulp.dest('js'));
+        .pipe(gulp.dest('public/assets/js'));
 });
 
 gulp.task('lint', function () {

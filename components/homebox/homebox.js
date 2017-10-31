@@ -61,7 +61,7 @@ $(document).ready(function() {
       homeboxCleanErrors();
       $.ajax({
         type: "POST",
-        url: '/form-submissions.php',
+        url: '/assets/form-submissions.php',
         data: {
           name: name,
           email: email,

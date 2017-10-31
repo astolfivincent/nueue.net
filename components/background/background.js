@@ -6,14 +6,14 @@ $(document).ready(function() {
   function backgroundAjax(req) {
     $.ajax({
       type: 'POST',
-      url: 'http://nueue.net/backgrounds.php',
+      url: 'http://nueue.net/assets/backgrounds.php',
       data: {
         req: req
       }
     });
   }
   rand = Math.floor(backgroundRand(1,100));
-  src = 'http://nueue.net/images/backgrounds/image-' + rand + '.jpg';
+  src = 'http://nueue.net/assets/images/backgrounds/image-' + rand + '.jpg';
   $background = $('.background__image');
   $background.load(function() {
     $(this).addClass('background__image-unhide');

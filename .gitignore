@@ -61,5 +61,4 @@ typings/
 # Other
 .DS_Store
 deploy.sh
-components/background/background.json
-images/backgrounds
+public/images/backgrounds

@@ -50,7 +50,7 @@ function get_page_type(rel, url) {
   return rel;
 }
 
-function compile_template(template, data, dirname, basename = 'index', extname = '.html', dest = './') {
+function compile_template(template, data, dirname, basename = 'index', extname = '.html', dest = './public/') {
   return gulp.src(template)
     .pipe(twig({
        data: data
