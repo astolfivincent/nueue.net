@@ -4,7 +4,7 @@ $gank_opts = array(
   'filesize_max' => 70000, // Max filesize for image in bytes
   'files_max' => 100,
   'url' => 'https://images.weserv.nl/?il&url=unsplash.it/960/480/?random&',
-  'backgrounds' => glob('images/backgrounds' . '/*.*')
+  'backgrounds' => glob('images/backgrounds/*.*')
 );
 
 function gank_image($g,$a,$n,$k) {
