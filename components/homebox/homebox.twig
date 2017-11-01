@@ -1,7 +1,7 @@
 <div class="homebox__wrapper">
   <div class="homebox">
     <div class="homebox__content">
-      <a href="/" aria-label="Nueue Logo">
+      <a href="/" alt="Nueue Logo">
         <img height="56" class="homebox__logo" src="/assets/images/logo.svg" />
       </a>
       <a href="http://github.com/astolfivincent" aria-label="Check out Nueue on Github" class="homebox__button-link">
@@ -13,11 +13,11 @@
         <a class="homebox__form-link" href="/">Change of Scenery?</a>
       </div>
       {% if not (showform == false) %}
-        <form class="homebox__form" tabindex="0" aria-label="Contact Form">
+        <form class="homebox__form" tabindex="0">
           <h2 class="homebox__form-title">Get in Touch</h2>
-          <input data-error="0" class="homebox__form-item" name="name" type="text" placeholder="Name" />
-          <input data-error="1" class="homebox__form-item"name="email" type="email" placeholder="Email" />
-          <textarea data-error="2" class="homebox__form-item" name="message" placeholder="Message"></textarea>
+          <input data-error="0" aria-label="Enter your name" class="homebox__form-item" name="name" type="text" placeholder="Name" />
+          <input data-error="1" aria-label="Enter your email" class="homebox__form-item"name="email" type="email" placeholder="Email" />
+          <textarea data-error="2" aria-label="Enter a message" class="homebox__form-item" name="message" placeholder="Message"></textarea>
           <input name="submit" type="submit" value="Submit" />
           <div class="homebox__form-loader" tabindex="0" aria-live="polite" aria-label="Submitting form, please wait">
             <img class="homebox__form-loader-icon" src="/assets/images/loading.svg" />

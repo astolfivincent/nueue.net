@@ -18,7 +18,7 @@
 
     {% if data.type == 'posts' %}
       {% include 'posts.twig' with data %}
-    {% elseif (data.type == 'pages') or (data.type == 'index') %}
+    {% elseif (data.type == 'pages') %}
       {% include 'pages.twig' with data %}
     {% elseif (data.listing.type == 'listing') %}
       {% include 'listing.twig' with data %}
