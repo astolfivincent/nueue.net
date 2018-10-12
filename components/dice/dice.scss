@@ -1,0 +1,58 @@
+// Dice
+//
+// Markup: dice.twig
+//
+// Style guide: dice
+
+.dice__table,
+%dice__table {
+  text-align: center;
+}
+
+.dice,
+%dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice__die {
+  background: url('/assets/images/dice.png');
+  background-position: -1px 1px;
+  background-size: 120px;
+  width: 34px;
+  height: 34px;
+  margin: 2rem .5rem;
+}
+
+.dice__die[data-dval='2'] {
+  background-position: 0 35px;
+}
+
+.dice__die[data-dval='3'] {
+  background-position: -43px 35px;
+}
+
+.dice__die[data-dval='4'] {
+  background-position: -86px 35px;
+}
+
+.dice__die[data-dval='5'] {
+  background-position: -44px 1px;
+}
+
+.dice__die[data-dval='6'] {
+  background-position: -86px 1px;
+}
+
+.dice__roll,
+%dice__roll {
+  background: linear-gradient(to left, #f7b5ff 0, #c95cfd 50%, #9e86ff 100%);
+  display: inline-block;
+  font-size: 1.25rem;
+  color: $white;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}

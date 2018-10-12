@@ -20,7 +20,7 @@ var gulp             = require('gulp'),
 gulp.task('styleguide', $.shell.task([
         // kss-node [source   folder of files to parse] [destination folder] --template [location of template files]
         'node_modules/.bin/kss <%= source %> <%= destination %> --builder <%= builder %> --namespace <%= namespace %> ' +
-        '--css css/styles.css '
+        '--css /assets/css/styles.css --js /assets/js/bundle.js'
     ], {
         templateData: {
             source:       'components',
@@ -54,12 +54,12 @@ gulp.task('watch', ['styles', 'lint', 'styleguide', 'browserify'], function() {
 gulp.task ('build', ['styles', 'browserify', 'styleguide']);
 
 gulp.task('styles', function() {
-    return gulp.src('scss/assets/styles.scss')
+    return gulp.src('scss/styles.scss')
         .pipe(sassGlob())
         .pipe(sass())
         .pipe(postcss([ autoprefixer({ browsers: ['last 4 versions'] }) ]))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('public/css')).pipe(browserSync.stream());
+        .pipe(gulp.dest('public/assets/css')).pipe(browserSync.stream());
 });
 
 gulp.task('browserify', function () {
