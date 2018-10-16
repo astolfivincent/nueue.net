@@ -4,9 +4,83 @@
 //
 // Style guide: dice
 
+.dice__container,
+%dice__container {
+  text-align: center;
+}
+
+.dice__notification,
+%dice__notification {
+  display: none;
+  border: 1px solid;
+  padding: 1rem;
+  max-width: 350px;
+  margin: 0 auto 1rem;
+}
+
+.dice__error,
+%dice__error {
+  @extend %dice__notification;
+  background: #ffd1d1;
+  color: #9a0000;
+}
+
+.dice__notice,
+%dice__notice {
+  @extend %dice__notification;
+  background: #e7ffe5;
+  color: #156f26;
+}
+
+.dice__welcome,
+%dice__welcome {
+  display: none;
+}
+
+input.dice__welcome-name,
+%dice__welcome-name {
+  max-width: 300px;
+  margin: 0 auto 1rem;
+  border: 1px solid;
+  color: #404040;
+  font-size: 1.5rem;
+  font-family: monospace;
+
+  &::placeholder {
+    color: #6b6b6b;
+  }
+}
+
+.dice__join,
+%dice__join {
+  display: none;
+}
+
+input.dice__join-name,
+%dice__join-name {
+  @extend %dice__welcome-name;
+}
+
 .dice__table,
 %dice__table {
+  display: none;
   text-align: center;
+}
+
+.dice__table-invite-text,
+%dice__table-invite-text {
+  display: inline-block;
+}
+
+input.dice__table-invite-link,
+%dice__table-invite-link {
+  display: inline-block;
+  max-width: 350px;
+  padding: .25rem;
+  color: #757575;
+  border: 1px solid;
+  margin: .5rem;
+  font-size: 1rem;
 }
 
 .dice,
@@ -47,7 +121,7 @@
 
 .dice__roll,
 %dice__roll {
-  background: linear-gradient(to left, #f7b5ff 0, #c95cfd 50%, #9e86ff 100%);
+  background: linear-gradient(to right, #9e86ff 0, #ae78c7 50%, #9e86ff 100%);
   display: inline-block;
   font-size: 1.25rem;
   color: $white;

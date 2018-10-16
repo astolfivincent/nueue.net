@@ -1,10 +1,34 @@
-<div class="dice__table">
-  <div class="dice">
-    <div data-did="0" data-dval="1" class="dice__die"></div>
-    <div data-did="1" data-dval="2" class="dice__die"></div>
-    <div data-did="2" data-dval="3" class="dice__die"></div>
-    <div data-did="3" data-dval="4" class="dice__die"></div>
-    <div data-did="4" data-dval="5" class="dice__die"></div>
+<div class="dice__container">
+  <div class="dice__welcome">
+    <h1>Wanna play dice?</h2>
+    <input type="text" id="player-name" class="dice__welcome-name" placeholder="Enter your name">
+    <label for="players-number">Number of Players</label>
+    <select name="players-number" id="players-number" class="dice__welcome-select">
+      <option selected="selected" value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <button class="dice__welcome-button">Start a Game</button>
   </div>
-  <div class="dice__roll">Roll</div>
+  <div class="dice__join">
+    <h1>Wanna play dice?</h1>
+    <p class="dice__error">Your invite link is invalid. Please request an invite link from the player you are trying to join.</p>
+    <p class="dice__notice">Invite link accepted. Please enter your name.</p>
+    <input type="text" id="player-join-name" class="dice__join-name" placeholder="Enter your name">
+    <button class="dice__join-button">Join Game</button>
+  </div>
+  <div class="dice__table">
+    <div class="dice__table-invite">
+      <input type="text" class="dice__table-invite-link" />
+      <button class="dice__table-invite-text">Copy Invite Link</button>
+    </div>
+    <div class="dice">
+      <div data-did="0" data-dval="1" class="dice__die"></div>
+      <div data-did="1" data-dval="2" class="dice__die"></div>
+      <div data-did="2" data-dval="3" class="dice__die"></div>
+      <div data-did="3" data-dval="4" class="dice__die"></div>
+      <div data-did="4" data-dval="5" class="dice__die"></div>
+    </div>
+    <div class="dice__roll">Roll</div>
+  </div>
 </div>
