@@ -13,11 +13,10 @@ $(document).ready(function() {
     });
   }
   rand = Math.floor(backgroundRand(1,100));
-  src = 'http://nueue.net/assets/images/backgrounds/image-' + rand + '.jpg';
+  src = 'https://nueue.net/assets/images/backgrounds/image-' + rand + '.jpg';
   $background = $('.background__image');
-  $background.load(function() {
-    $(this).addClass('background__image-unhide');
-    backgroundAjax(0);
+  $background.on('load', function() {
+    $background.addClass('background__image-unhide');
   });
   $background.attr('src', src);
 });
